@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin - Login</title>
+        <link href="~/Template/sbAdmin2/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
+        <link href="~/Template/sbAdmin2/css/sb-admin-2.css" rel="stylesheet" />
+    </head>
+    <body class="bg-gradient-primary">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-12 col-md-9">
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                        </div>
+                                        <form class="user">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control form-control-user" id="exampleInputUser" aria-describedby="emailHelp" placeholder="Username">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                            </div>
+                                            <a href="#" onclick="checkLogin()" class="btn btn-primary btn-user btn-block">
+                                                Login
+                                            </a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="~/Template/sbAdmin2/vendor/jquery/jquery.min.js"></script>
+        <script src="~/Template/sbAdmin2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="~/Template/sbAdmin2/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="~/Template/sbAdmin2/js/sb-admin-2.min.js"></script>
+        <script src="~/Template/sbAdmin2/vendor/chart.js/Chart.min.js"></script>
+        <script src="~/Template/sbAdmin2/js/demo/chart-area-demo.js"></script>
+        <script src="~/Template/sbAdmin2/js/demo/chart-pie-demo.js"></script>
+    </body>
+</html>
+
+
+<script>
+    function checkLogin() {
+        var data = JSON.stringify({
+            username: $("#exampleInputUser").val(),
+            password: $("#exampleInputPassword").val()
+        });
+        return $.ajax({
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+            type: 'POST',
+            url: "/Home/CheckLogin",
+            data: data,
+            success: function (result) {
+                if (result == true) {
+                    window.location.href = "/Home/Index";
+                }
+                else {
+                    window.location.href = "/Home/Login";
+                }
+            },
+            error: function () {
+                alert("Error!")
+            }
+        });
+    }
+</script>

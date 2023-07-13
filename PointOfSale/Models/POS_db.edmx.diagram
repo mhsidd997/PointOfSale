@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d770978442c3495ea865d6426a44977c" Name="Diagram1">
+        <EntityTypeShape EntityType="POS_ProjectModel.Batch" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_ProjectModel.Category" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_ProjectModel.Product" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_ProjectModel.ProductStock" Width="1.5" PointX="5.25" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_ProjectModel.RolePermission" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_ProjectModel.Sale" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_ProjectModel.SalesDetail" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_ProjectModel.sysdiagram" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POS_ProjectModel.User" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="true" />
+        <AssociationConnector Association="POS_ProjectModel.FK_ProductStock_Batch" ManuallyRouted="false" />
+        <AssociationConnector Association="POS_ProjectModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="POS_ProjectModel.FK_ProductQuantity_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="POS_ProjectModel.FK_SalesDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="POS_ProjectModel.FK_SalesDetail_Sale" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
