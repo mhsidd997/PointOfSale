@@ -8,7 +8,7 @@
         init(); //init is called
 
         function GetProducts() {
-            $http.get('/Home/GetAllProduct')
+            $http.get('/Home/GetAllProduct_2')
                 .then(function (response) {
                     var data = response.data;
                     $scope.ProductList = data;
